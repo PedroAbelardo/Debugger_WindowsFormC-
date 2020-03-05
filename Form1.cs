@@ -312,24 +312,25 @@ namespace Debugger_Tasken_2020
             configMap.ExeConfigFilename = path;
             var settings = ConfigurationManager.OpenMappedExeConfiguration(configMap, ConfigurationUserLevel.None).AppSettings.Settings;
 
-            //SALVA AS CONFIGURAÇÕES NO ARQUIVO
+            //PASSANDO AS CONFIGURAÇÕES DO EXECUTAVEL PARA O ARQUIVO NO SERVIDOR PROCESS
             settings["ServidorProcessServico"].Value = ServProcess.Text;
 
-            //SALVA AS CONFIGURAÇÕES DO PROCESS NO ARQUIVO
+            //PASSANDO AS CONFIGURAÇÕES DO EXECUTAVEL PARA O ARQUIVO NA PARTE DO PROCESS
             settings["DatabaseProcessServico"].Value = prc_nbasedados.Text;
             settings["UsuarioProcessServico"].Value = prc_usuario.Text;
             settings["SenhaProcessServico"].Value = prc_password.Text;
 
-            //SALVA AS CONFIGURAÇÕES DO SRC NO ARQUIVO
+            //PASSANDO AS CONFIGURAÇÕES DO EXECUTAVEL PARA O ARQUIVO NA PARTE DO SRC
             settings["DatabaseSRCServico"].Value = src_nbasedados.Text;
             settings["UsuarioSRCServico"].Value = src_usu.Text;
             settings["SenhaSRCServico"].Value = src_password.Text;
 
-            //SALVA AS CONFIGURAÇÕES DA STAGE NO ARQUIVO
+            //PASSANDO AS CONFIGURAÇÕES DO EXECUTAVEL PARA O ARQUIVO NA PARTE DA STAGE
             settings["pSmartwayStageBanco"].Value = stage_nbasedados.Text;
             settings["pSmartwayStageUsuario"].Value = stage_usu.Text;
             settings["pSmartwayStageSenha"].Value = stage_password.Text;
 
+            //SALVA AS CONFIGURAÇÕES NO ARQUIVO
             settings.CurrentConfiguration.Save();
         }
     }
